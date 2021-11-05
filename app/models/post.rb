@@ -5,6 +5,7 @@ class Post < ApplicationRecord
   belongs_to :user
   # # Postモデルに対して、Likeモデルが1:Nになるように関連付け
   has_many :likes, dependent: :destroy
+  # titleとbodyにバリデーション
   validates :title, presence: true
   validates :body, presence: true
   # liked_by?メソッドで、引数で渡されたユーザidがLikesテーブル内に存在（exists?）するかどうかを調べる。存在していればtrue、存在していなければfalseを返す。

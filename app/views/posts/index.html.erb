@@ -2,7 +2,7 @@
 <% @posts.each do |post| %>
 <div>
   <!--link_toでは、doからendの間が、aタグで囲まれた状態になる。-->
-<!--結果、attachment_image_tagは、aタグに囲まれたimgタグになる。-->
+  <!--結果、attachment_image_tagは、aタグに囲まれたimgタグになる。-->
   <%= link_to post_path(post.id) do %>
     <!--attachment_image_tagは、refile側が用意したヘルパーで、imgタグを作成してくれる。-->
     <!--post変数のimage_idに保存された画像のimgタグを生成。-->
