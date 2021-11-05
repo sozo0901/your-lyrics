@@ -60,8 +60,15 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+# ユーザ認証機能
 gem 'devise'
 # 画像投稿用gem
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 # 画像加工用（サイズ調整など）gem
 gem "refile-mini_magick"
+# レイアウト調整にBootstrap導入。
+gem 'bootstrap', '~> 4.5'
+# BootstrapがjQueryに依存しているため導入。
+gem 'jquery-rails'
+# Font Awesomeを利用すると、特定のclass名を指定するだけで、1,500個以上のアイコンを挿入できる。
+gem 'font-awesome-sass', '~> 5.13'
