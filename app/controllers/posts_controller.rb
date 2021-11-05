@@ -8,10 +8,12 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     # current_userはdeviseのヘルパーメソッド。deviseを導入しないと使用できない。
     @post.user_id = current_user.id
-    # データをデータベースに保存するためのsaveメソッド実行
-    @post.save
-    # 投稿一覧画面へ遷移
-    redirect_to posts_path
+   
+    if @post.save
+      redirect_to posts_path
+    else
+      render :new
+    end
   end
 
   def index
