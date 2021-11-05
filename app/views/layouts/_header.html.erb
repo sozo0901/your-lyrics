@@ -1,0 +1,16 @@
+    <!-- devise側で用意しているヘルパー。ログイン済みならばtrueが、ログインしていなければfalseが返される。 -->
+    <% if user_signed_in? %>
+      <li>
+        <%= link_to '投稿フォーム', new_post_path %>
+      </li>
+      <li>
+        <%= link_to "logout", destroy_user_session_path, method: :delete %>
+      </li>
+    <% else %>
+      <li>
+        <%= link_to "sign up", new_user_registration_path %>
+      </li>
+      <li>
+        <%= link_to "login", new_user_session_path %>
+      </li>
+    <% end %>
