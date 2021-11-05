@@ -7,6 +7,9 @@
         <%= link_to '投稿一覧', posts_path %>
       </li>
       <li>
+        <%= link_to 'マイページ', user_path(current_user.id) %>
+      </li>
+      <li>
         <%= link_to "logout", destroy_user_session_path, method: :delete %>
       </li>
     <% else %>

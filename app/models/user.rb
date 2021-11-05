@@ -8,5 +8,7 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   # Userモデルに対して、Likeモデルが1:Nになるように関連付け
   has_many :likes, dependent: :destroy
-  
+  # モデルに、画像アップ用のメソッド（attachment）を追加してフィールド名に（image）を指定。
+  # refileを使用するうえでのルール。(idは含めない)
+  attachment :image
 end
