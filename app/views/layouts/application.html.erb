@@ -10,12 +10,10 @@
   </head>
 
   <body>
-    <% if user_signed_in? %>
     <%= render 'layouts/header' %>
-    <% end %>
-      <main>
-        <p id="notice"><%= notice %></p>
-        <%= yield %>
-      </main>
+    <main>
+      <p id="notice"><%= notice %></p>
+      <%= yield %>
+    </main>
   </body>
 </html>

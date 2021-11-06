@@ -1,16 +1,2 @@
-<!--コントローラから渡された@posts変数内から1つずつ取り出して、post変数へ格納。-->
-<% @posts.each do |post| %>
-<div>
-  <!--link_toでは、doからendの間が、aタグで囲まれた状態になる。-->
-  <!--結果、attachment_image_tagは、aタグに囲まれたimgタグになる。-->
-  <%= link_to post_path(post.id) do %>
-    <!--attachment_image_tagは、refile側が用意したヘルパーで、imgタグを作成してくれる。-->
-    <!--post変数のimage_idに保存された画像のimgタグを生成。-->
-    <%= attachment_image_tag post, :image %>
-  <% end %>
-  <p><%= attachment_image_tag post.user, :image, :fill, 60, 60, fallback:"no_image.jpg" %></p>
-  <p>タイトル：<%= post.title %></p>
-  <P>歌詞：<%= post.body %></P>
-  <p>この歌詞を書いたユーザー：<%= post.user.name %></p>
-</div>
-<% end %>
+<!--render [部分テンプレートファイルの指定], [ローカル変数]:[渡す値]-->
+<%= render 'posts/all_posts', posts: @posts %>

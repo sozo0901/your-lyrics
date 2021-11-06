@@ -1,12 +1,12 @@
-<div>
-  <%= attachment_image_tag @post, :image %>
-  <p>Title:<%= @post.title %></p>
-  <p>Lyrics:<%= @post.body %></p>
-  <p><%= @post.user.name %></p>
-  <p><%= @post.created_at.strftime('%Y/%m/%d') %></p>
-  <% if @post.user == current_user %>
-    <%= link_to "削除する", post_path(@post), method: :delete %>
+<div class="justify-content-md-center">
+  <%= link_to user_path(@post.user.id), class:"text-dark" do %>
+    <p><%= @post.user.name %></p>
+    <p><%= attachment_image_tag @post.user, :image, :fill, 60, 60, fallback:"no_image.jpg", class:"mt-3 rounded-circle" %></p>
   <% end %>
+  <p><%= @post.title %></p>
+  <%= attachment_image_tag @post, :image, :fill, 200, 200 %>
+  <p><%= @post.body %></p>
+  <p><%= @post.created_at.strftime('%Y/%m/%d') %></p>
   <% if @post.liked_by?(current_user) %>
     <p>
       <%= link_to post_likes_path(@post), method: :delete do %>
@@ -20,4 +20,8 @@
       <% end %>
     </p>
   <% end %>
+  <% if @post.user == current_user %>
+    <%= link_to "削除する", post_path(@post), method: :delete %>
+  <% end %>
 </div>
+

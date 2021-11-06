@@ -1,37 +1,38 @@
 <header>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-      <a class="navbar-brand" href="/posts"><span>Your Lyrics</span></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav ml-auto">
-        <!-- devise側で用意しているヘルパー。ログイン済みならばtrueが、ログインしていなければfalseが返される。 -->
+  <div class="container">
+    <div class="row">
+      <div class="col logo">
         <% if user_signed_in? %>
-          <li>
-            <%= link_to '', new_post_path,class: 'fas fa-home nav-link text-light' %>
-          </li>
-          <li>
-            <%= link_to '', posts_path,class: 'fas fa-book nav-link text-light' %>
-          </li>
-          <li>
-            <%= link_to '', user_path(current_user.id),class: 'fas fa-users nav-link text-light' %>
-          </li>
-          <li>
-            <%= link_to "logout", destroy_user_session_path, method: :delete,class: 'fas fa-sign-out-alt nav-link text-light' %>
-          </li>
-        <% else %>
-          <li>
-            <%= link_to "sign up", new_user_registration_path,class: 'fas fa-user-plus nav-link text-light' %>
-          </li>
-          <li>
-            <%= link_to "login", new_user_session_path,class: 'fas fa-sign-in-alt nav-link text-light' %>
-          </li>
+           <%= link_to image_tag("your_lyrics.png", size: "100x100"), posts_path %>
         <% end %>
+      </div>
+      <div class="col">
+        <% if user_signed_in? %>
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <%= link_to '', posts_path, class: 'fas fa-home mx-3 mt-4' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to '', new_post_path, class: 'fas fa-pen mx-3 mt-4' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to '', user_path(current_user.id), class: 'fas fa-user mx-3 mt-4' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "logout", destroy_user_session_path, method: :delete, class: 'fas fa-sign-out-alt mx-3 mt-4' %>
+          </li>
         </ul>
+        <% else %>
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <%= link_to "sign up", new_user_registration_path, class: 'fas fa-user-plus mx-3 mt-4' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "login", new_user_session_path, class: 'fas fa-sign-in-alt mx-3 mt-4' %>
+          </li>
+        </ul>
+        <% end %>
       </div>
     </div>
-  </nav>
+  </div>
 </header>
-

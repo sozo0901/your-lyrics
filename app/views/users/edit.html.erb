@@ -1,11 +1,12 @@
 <h2>プロフィール編集</h2>
+<%= render 'layouts/errors', obj: @user %>
 <%= form_with model:@user, local:true do |f| %>
   <label for="inputName">Name</label>
   <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"name" %>
-  <!--attachment_image_tagは、画像を埋め込むときに使う。これにより、ユーザのプロフィール画像が表示される。-->
+  <label for="inputName">Caption</label>
+  <%= f.text_field :caption, autofocus: true, id:"inputName", placeholder:"自己紹介" %>
   <%= attachment_image_tag @user, :image, :fill, 60, 60, fallback: "no_image.jpg" %>
   <label for="inputName">Image</label>
-  <!--attachment_fieldで、画像選択用のボタンが生成される。-->
   <%= f.attachment_field :image, placeholder: "プロフィール画像" %>
   <%= f.submit "変更を保存" %>
 <% end %>
