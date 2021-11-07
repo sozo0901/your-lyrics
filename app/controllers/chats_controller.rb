@@ -3,10 +3,10 @@ class ChatsController < ApplicationController
     @user = User.find(params[:id])
     #ログインしているユーザーのidが入ったroom_idのみを配列で取得（該当するroom_idが複数でも全て取得）
     rooms = current_user.user_rooms.pluck(:room_id)
-    #user_idが@user　且つ　room_idが上で取得したrooms配列の中にある数値のもののみ取得(1個または0個のはずです)
+    #user_idが@user　且つ　room_idが上で取得したrooms配列の中にある数値のもののみ取得(1個または0個のはず)
     user_rooms = UserRoom.find_by(user_id: @user.id, room_id: rooms)
     #上記で取得できなかった場合の処理
-    if user_rooms.nil? 
+    if user_rooms.nil?
       #新しいroomを作成して保存
       @room = Room.new
       @room.save
@@ -20,7 +20,7 @@ class ChatsController < ApplicationController
     end
     #if文の中で定義した@roomに紐づくchatsテーブルのレコードを代入
     @chats = @room.chats
-    #@room.idを代入したChat.newを用意しておく(message送信時のform用)←筆者の表現が合っているか分かりません、、
+    #@room.idを代入したChat.newを用意しておく(message送信時のform用)
     @chat = Chat.new(room_id: @room.id)
   end
 
@@ -30,7 +30,7 @@ class ChatsController < ApplicationController
   end
 
   private
-  
+
   def chat_params
     params.require(:chat).permit(:message, :room_id)
   end
