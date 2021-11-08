@@ -3,7 +3,9 @@
     <div class="row">
       <div class="col logo mt-3">
         <% if user_signed_in? %>
-           <%= link_to image_tag("your_lyrics-removebg.png", size: "200x40"), posts_path %>
+          <%= link_to image_tag("your_lyrics-removebg.png", size: "200x40"), posts_path %>
+        <% else %>
+          <%= link_to image_tag("your_lyrics-removebg.png", size: "200x40"), root_path %>
         <% end %>
       </div>
       <div class="col">
