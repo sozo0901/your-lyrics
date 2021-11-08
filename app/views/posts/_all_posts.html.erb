@@ -1,56 +1,23 @@
-<% posts.each do |post| %>
-<%= link_to post_path(post.id) do %>
-<div class="card mx-auto w-50 mb-5">
-  <div>
-    <%= attachment_image_tag post.user, :image, :fill, 60, 60, fallback:"no_image.jpg" %>
+<div class="container pt-3">
+  <% posts.each do |post| %>
+  <div class="card shadow m-5">
+    <div class="card shadow m-2">
+      <div class="card-body mx-auto">
+        <h3 class="card-title"><%= post.title %></h3>
+      </div>
+    </div>
+    <div class="row mx-auto">
+      <%= attachment_image_tag post, :image, :fill, 500, 200, class: "d-block rounded-circle m-4 shadow" %>
+    </div>
+    <div class="card shadow m-2">
+      <div class="card-body mx-auto">
+        <h2 class="card-title">Lyrics</h2>
+        <p class="card-text"><%= simple_format(post.body) %></p>
+      </div>
+    </div>
   </div>
-  <div>
-    <%= post.user.name %>
-  </div>
-  <div>
-    <strong><%= post.title %></strong>
-  </div>
-  <div>
-    <%= attachment_image_tag post, :image, :fill, 200, 200 %>
-  </div>
-  <div>
-     <%= post.body %>
-  </div>
-  <div>
-    <% if post.liked_by?(current_user) %>
-    <p>
-      <%= link_to post_likes_path(post), method: :delete do %>
-        <strong><i class="fas fa-heart"></i><span><%= post.likes.count %></span></strong>
-      <% end %>
-    </p>
-    <% else %>
-    <p>
-      <%= link_to post_likes_path(post), method: :post do %>
-        <strong><i class="far fa-heart"></i><span><%= post.likes.count %></span></strong>
-      <% end %>
-    </p>
-    <% end %>
-  </div>
-  <div>
-    <% if post.stocked_by?(current_user) %>
-    <p>
-      <%= link_to post_stocks_path(post), method: :delete do %>
-        <strong><i class="fas fa-bookmark"></i></strong>
-      <% end %>
-    </p>
-    <% else %>
-    <p>
-      <%= link_to post_stocks_path(post), method: :post do %>
-        <strong><i class="far fa-bookmark"></i></strong>
-      <% end %>
-    </p>
-    <% end %>
-  </div>
+  <% end %>
 </div>
-<% end %>
-<% end %>
-
-
 
 
 
