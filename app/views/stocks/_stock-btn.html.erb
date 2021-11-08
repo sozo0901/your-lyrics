@@ -1,0 +1,10 @@
+
+<% if post.stocked_by?(current_user) %>
+  <%= link_to post_stocks_path(post), method: :delete, remote: true do %>
+    <i class="fas fa-bookmark"></i>
+  <% end %>
+<% else %>
+  <%= link_to post_stocks_path(post), method: :post, remote: true do %>
+    <i class="far fa-bookmark"></i>
+  <% end %>
+<% end %>

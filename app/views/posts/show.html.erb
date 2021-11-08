@@ -10,6 +10,9 @@
   <div id="like-btn_<%= @post.id %>">
     <%= render "likes/like-btn", post: @post %>
   </div>
+  <div id="stock-btn_<%= @post.id %>">
+    <%= render "stocks/stock-btn", post: @post %>
+  </div>
   <% if @post.user == current_user %>
     <%= link_to "削除する", post_path(@post), method: :delete %>
   <% end %>
