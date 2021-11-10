@@ -1,8 +1,8 @@
-<div class="container" style="background-color: #fff;">
+<div class="container border rounded-lg w-75" style="background-color: #fff;">
   <div class="row text-center border rounded-lg">
     <div class="col-3 m-3">
       <div class="text-center">
-        <%= attachment_image_tag @user, :image, :fill, 200, 200, format:'jpeg', fallback:"no_image.jpg", class: "rounded-circle" %>
+        <%= attachment_image_tag @user, :image, :fill, 200, 200, format:'jpeg', fallback:"no_image.jpg", class: "rounded-circle border" %>
       </div>
     </div>
     <div class="col-6 mt-3">
@@ -21,23 +21,19 @@
           <%= link_to 'チャットする', chat_path(@user.id), class: "btn btn-dark border border-secondary" %>
         <% end %>
       </div>
-       <p>
-        <tr>
-          <th>投稿<%= @user.posts.count %>件</th>
-        </tr>
-        <tr>
-          <%= link_to user_following_path(@user), class:"text-dark" do %>
-          <th>フォロー<%= @user.following.count %>人</th>
-          <% end %>
-        </tr>
-        <tr>
-          <%= link_to user_following_path(@user), class:"text-dark" do %>
-          <th>フォロワー<%= @user.followers.count %>人</th>
-          <% end %>
-        </tr>
-      </p>
-      <div class="mt-5">
-        <%= @user.caption %>
+      <div class="d-flex justify-content-around mt-3">
+        <span class="">投稿<%= @user.posts.count %>件</span>
+
+        <%= link_to user_following_path(@user), class:"text-dark" do %>
+          <span>フォロー<%= @user.following.count %>人</span>
+        <% end %>
+
+        <%= link_to user_following_path(@user), class:"text-dark" do %>
+          <span>フォロワー<%= @user.followers.count %>人</span>
+        <% end %>
+      </div>
+      <div class="my-3 p-3 h6">
+        <%= simple_format(@user.caption) %>
       </div>
     </div>
   </div>
