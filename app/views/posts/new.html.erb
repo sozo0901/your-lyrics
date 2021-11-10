@@ -1,12 +1,19 @@
-<h1>投稿フォーム</h1>
-<!--render '部分テンプレートファイルの指定', ローカル変数: 渡す値-->
-<%= render 'layouts/errors', obj: @post %>
-<%= form_with model: @post, local:true do |f| %>
-  <h4>画像</h4>
-  <%= f.attachment_field :image %>
-  <h4>タイトル</h4>
-  <%= f.text_field :title %>
-  <h4>歌詞</h4>
-  <%= f.text_area :body %>
-  <%= f.submit '投稿する' %>
-<% end %>
+<div class="container w-50" style="background-color: white;">
+  <%= form_with model: @post, local:true do |f| %>
+  <div class="form-group mx-5 mt-5 pt-5">
+    <h2 class="mb-3">Song Title</h2>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+  <div class="form-group mx-5 mt-2 pt-5">
+    <h2 class="mb-3">Image</h2>
+    <%= f.attachment_field :image %>
+  </div>
+  <div class="form-group mx-5 mt-2 pt-5">
+    <h2 class="mb-3">Lyrics</h2>
+    <%= f.text_area :body, class: "form-control" %>
+  </div>
+  <div class="mx-5 mb-5 py-5">
+     <%= f.submit 'Upload', class: "btn btn-primary" %>
+  </div>
+  <% end %>
+</div>
