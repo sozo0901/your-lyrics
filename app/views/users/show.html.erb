@@ -6,7 +6,7 @@
       </div>
     </div>
     <div class="col-6 mt-3">
-      <div class="h2">
+      <div class="h2 d-flex align-items-center offset-1 mt-3">
        <span><%= @user.name %></span>
          <% if current_user != @user %>
           <% if current_user.following?(@user) %>
