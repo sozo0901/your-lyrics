@@ -1,6 +1,6 @@
 <div class="container w-50" style="background-color: white;">
-  <%= form_with model: @post, local:true do |f| %>
-  <div class="form-group mx-5 mt-5 pt-5">
+<%= form_with model: @post, local:true do |f| %>
+  <div class="form-group mx-5 pt-5">
     <h2 class="mb-3">Song Title</h2>
     <%= f.text_field :title, class: "form-control" %>
   </div>
@@ -15,5 +15,5 @@
   <div class="mx-5 mb-5 py-5">
      <%= f.submit 'Upload', class: "btn btn-primary" %>
   </div>
-  <% end %>
+<% end %>
 </div>
