@@ -13,15 +13,16 @@
 
   <div class="form-group h3 mx-5 mt-2 pt-5">
     <%= f.label :caption %><br />
-    <%= f.text_area :caption, autofocus: true, id:"inputName", placeholder:"自己紹介", class: "form-control" %>
+    <%= f.text_area :caption, autofocus: true, id:"inputName", placeholder:"自己紹介", class: "caption form-control"%>
   </div>
 
   <div class="mx-5 mb-5 py-5 text-center">
-    <%= f.submit "Upload", class: "form-control btn btn-primary w-50" %>
+    <span class="mr-2"><%= link_to "Cancel",user_path(@user.id), class: "form-control btn btn-outline-dark w-25" %></span>
+    <span class="ml-2"><%= f.submit "Save changes", class: "form-control btn btn-outline-dark w-50" %></span>
   </div>
 
   <div class="mx-5 mb-5 pt-3 text-center">
-    <%= f.submit "アカウントを削除する", class: "form-control btn btn-danger" %>
+    <%= link_to "アカウントを削除する",user_path(@user.id), method: :delete, data: {confirm: "本当にアカウントを削除しますか？" }, class: "btn btn-danger" %>
   </div>
 
 <% end %>
