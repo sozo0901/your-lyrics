@@ -16,6 +16,8 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   # Userモデルに対して、Stockモデルが1:Nになるように関連付け
   has_many :stocks, dependent: :destroy
+
+  # フォロー機能
   # 自分がフォローする側（与フォロー）の関係性
   has_many :relations, class_name: "Relation", foreign_key: "follow_id", dependent: :destroy
   # 与フォロー関係を通じて参照->自分がフォローしている人
@@ -37,10 +39,11 @@ class User < ApplicationRecord
     following.include?(user)
   end
 
+  # DM機能
   has_many :user_rooms, dependent: :destroy
 
   has_many :chats, dependent: :destroy
-  
+
   has_many :rooms, through: :user_rooms
-  
+
 end
