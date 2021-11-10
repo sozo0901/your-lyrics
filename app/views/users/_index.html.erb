@@ -9,10 +9,10 @@
       <h4 class="my-5 text-dark"><%= user.name %></h4>
     </div>
   <% end %>
-    <div class="col">
+    <div class="col d-flex justify-content-end">
       <% if current_user != user %>
         <% if current_user.following?(user) %>
-          <%= link_to "フォロー中", user_relations_path(user.id), method: :delete, data: {confirm: "フォローを解除しますか？" }, class: "btn btn-primary offset-5 my-5" %>
+          <%= link_to "フォロー中", user_relations_path(user.id), method: :delete, data: {confirm: "フォローを解除しますか？" }, class: "btn btn-primary my-5 text-end" %>
         <% else %>
           <%= link_to "フォローする", user_relations_path(user.id), method: :post, class: "btn btn-success" %>
         <% end %>
