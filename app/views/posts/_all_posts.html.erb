@@ -1,7 +1,7 @@
-<div class="container pt-3">
+<div class="container w-75 pt-3">
   <% posts.each do |post| %>
   <div class="card shadow m-5">
-    <div class="card shadow m-2">
+    <div class="text-center">
       <div class="card-body mx-auto">
         <h3 class="card-title"><%= post.title %></h3>
       </div>
@@ -10,9 +10,8 @@
       <%= attachment_image_tag post, :image, :fill, 500, 200, class: "d-block rounded-circle m-4 shadow" %>
     </div>
     <div class="card shadow m-2">
-      <div class="card-body mx-auto">
-        <h2 class="card-title">Lyrics</h2>
-        <p class="card-text"><%= simple_format(post.body) %></p>
+        <h2>Lyrics</h2>
+        <p><%= simple_format(post.body) %></p>
       </div>
     </div>
   </div>

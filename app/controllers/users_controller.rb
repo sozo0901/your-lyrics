@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     # そのユーザ（@user）に関連付けられた投稿（.posts）のみ@postに渡すことができる記述。全体の投稿ではなく個人が投稿したもののみを表示する。
     @posts = @user.posts.all
   end
-  
+
   def edit
     @user = User.find(params[:id])
   end

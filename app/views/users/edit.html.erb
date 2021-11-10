@@ -1,12 +1,28 @@
-<h2>プロフィール編集</h2>
-<%= render 'layouts/errors', obj: @user %>
-<%= form_with model:@user, local:true do |f| %>
-  <label for="inputName">Name</label>
-  <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"name" %>
-  <label for="inputName">Caption</label>
-  <%= f.text_field :caption, autofocus: true, id:"inputName", placeholder:"自己紹介" %>
-  <%= attachment_image_tag @user, :image, :fill, 60, 60, fallback: "no_image.jpg" %>
-  <label for="inputName">Image</label>
-  <%= f.attachment_field :image, placeholder: "プロフィール画像" %>
-  <%= f.submit "変更を保存" %>
+<div class="container border rounded-lg w-50" style="background-color: white;">
+<%= form_with model: @user, local: true do |f| %>
+
+  <div class="form-group text-center mx-5 pt-5">
+    <%= attachment_image_tag @user, :image, :fill, 150, 150, fallback: "no_image.jpg", class: "rounded-circle mb-3" %><br>
+    <%= f.attachment_field :image, placeholder: "プロフィール画像",class: "offset-2" %>
+  </div>
+
+  <div class="form-group h3 mx-5 pt-5">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true, class: "form-control" %>
+  </div>
+
+  <div class="form-group h3 mx-5 mt-2 pt-5">
+    <%= f.label :caption %><br />
+    <%= f.text_area :caption, autofocus: true, id:"inputName", placeholder:"自己紹介", class: "form-control" %>
+  </div>
+
+  <div class="mx-5 mb-5 py-5 text-center">
+    <%= f.submit "Upload", class: "form-control btn btn-primary w-50" %>
+  </div>
+
+  <div class="mx-5 mb-5 pt-3 text-center">
+    <%= f.submit "アカウントを削除する", class: "form-control btn btn-danger" %>
+  </div>
+
 <% end %>
+</div>
