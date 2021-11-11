@@ -1,1 +1,21 @@
-<%= render '/users/index', users: @users %>
+<% if @users.exists? %>
+  <div class="container w-50 mb-2" style="background-color: white">
+    <div class="row">
+      <div class="col">
+        <h1 class="display-1 d-flex justify-content-center"><i class="fas fa-user-friends"></i></h1>
+        <h1 class="d-flex justify-content-center"><%= @user.name %>さんのフォロー中</h1>
+      </div>
+    </div>
+  </div>
+  <%= render '/users/index', users: @users %>
+<% else %>
+  <div class="container w-50" style="background-color: white">
+    <div class="row">
+      <div class="col">
+        <h1 class="display-1 d-flex justify-content-center"><i class="fas fa-user-friends"></i></h1>
+        <h1 class="d-flex justify-content-center"><%= @user.name %>さんのフォロー中</h1>
+        <h2 class="d-flex justify-content-center my-5">No users</h2>
+      </div>
+    </div>
+  </div>
+<% end %>

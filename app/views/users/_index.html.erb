@@ -3,7 +3,7 @@
   <div class="row border-bottom d-flex align-items-center">
     <div class="col">
       <%= link_to user_path(user.id) do %>
-      <span class="mt-4 d-flex justify-content-start"><%= attachment_image_tag user, :image, :fill, 70, 70, fallback: "no_image.jpg", class: "rounded-circle mb-3" %></span>
+      <span class="mt-4 d-flex justify-content-start"><%= attachment_image_tag user, :image, :fill, 100, 100, fallback: "no_image.jpg", class: "rounded-circle border mb-3" %></span>
     </div>
     <div class="col">
       <h4 class="my-5 text-dark"><%= user.name %></h4>

@@ -5,8 +5,8 @@
         <%= attachment_image_tag @user, :image, :fill, 200, 200, format:'jpeg', fallback:"no_image.jpg", class: "rounded-circle border" %>
       </div>
     </div>
-    <div class="col-6 mt-3">
-      <div class="h2 d-flex align-items-center offset-1 mt-3">
+    <div class="col-8 mt-3">
+      <div class="h2 d-flex align-items-center mt-3">
        <span><%= @user.name %></span>
          <% if current_user != @user %>
           <% if current_user.following?(@user) %>

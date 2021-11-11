@@ -1,22 +1,29 @@
+<% posts.each do |post| %>
 <div class="container w-75 pt-3">
-  <% posts.each do |post| %>
   <div class="card shadow m-5">
     <div class="text-center">
       <div class="card-body mx-auto">
+        <%= link_to post_path(post.id) do %>
         <h3 class="card-title"><%= post.title %></h3>
+        <% end %>
       </div>
     </div>
     <div class="row mx-auto">
-      <%= attachment_image_tag post, :image, :fill, 500, 200, class: "d-block rounded-circle m-4 shadow" %>
+      <%= attachment_image_tag post, :image, :fill, 200, 200, class: "d-block rounded-circle m-4 shadow" %>
     </div>
     <div class="card shadow m-2">
-        <h2>Lyrics</h2>
-        <p><%= simple_format(post.body) %></p>
+      <p>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample">
+          Button with data-target
+        </button>
+      </p>
+      <div class="collapse" id="collapseExample">
+        <%= simple_format(post.body) %>
       </div>
     </div>
   </div>
-  <% end %>
 </div>
+<% end %>
 
 
 
