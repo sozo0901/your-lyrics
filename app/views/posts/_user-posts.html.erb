@@ -1,12 +1,6 @@
-<% @posts.each do |post| %>
+<% posts.each do |post| %>
 <div class="container w-75 pt-3">
   <div class="card shadow m-5">
-    <div class="card shadow mb-3 text-center">
-    <%= link_to user_path(post.user.id), class:"text-dark" do %>
-      <p><%= attachment_image_tag post.user, :image, :fill, 50, 50, fallback:"no_image.jpg", class:"mt-2 rounded-circle" %></p>
-      <p class="mb-2"><%= post.user.name %></p>
-    <% end %>
-  </div>
     <div class="text-center">
       <div class="card-body">
         <%= link_to post_path(post.id) do %>
@@ -25,3 +19,7 @@
   </div>
 </div>
 <% end %>
+
+
+
+

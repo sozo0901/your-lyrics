@@ -6,22 +6,22 @@
       </div>
     </div>
     <div class="col-8 mt-3">
-      <div class="h2 d-flex align-items-center mt-3">
-       <span><%= @user.name %></span>
-         <% if current_user != @user %>
+      <div class="h2 d-flex justify-content-center mt-3">
+        <%= @user.name %>
+      </div>
+      <div class="h2 d-flex justify-content-center mt-3">
+        <% if current_user != @user %>
           <% if current_user.following?(@user) %>
             <%= link_to "フォロー中", user_relations_path(@user.id), method: :delete, data: {confirm: "フォローを解除しますか？" }, class: "btn btn-primary border border-secondary mx-3" %>
           <% else %>
             <%= link_to "フォローする", user_relations_path(@user.id), method: :post, class: "btn btn-success border border-secondary mx-3" %>
           <% end %>
+          <%= link_to 'チャットする', chat_path(@user.id), class: "btn btn-dark border border-secondary mx-3" %>
         <% else %>
           <%= link_to "プロフィールを編集", edit_user_path(@user), class: "btn btn-light border border-secondary mx-3" %>
         <% end %>
-        <% if current_user != @user %>
-          <%= link_to 'チャットする', chat_path(@user.id), class: "btn btn-dark border border-secondary" %>
-        <% end %>
       </div>
-      <div class="h6 d-flex justify-content-around mt-3">
+      <div class="h5 d-flex justify-content-around mt-3">
         <span class="">投稿<%= @user.posts.count %>件</span>
 
         <%= link_to user_following_path(@user), class:"text-dark" do %>
@@ -38,6 +38,6 @@
     </div>
   </div>
 </div>
-<%= render 'posts/all_posts', posts: @posts %>
+<%= render 'posts/user-posts', posts: @posts %>
 
 
