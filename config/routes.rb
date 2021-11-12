@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'homes#top'
-  resources :posts, only: [:new, :create, :index, :show, :destroy] do
+  resources :posts, only: [:new, :create, :index, :show, :edit, :update, :destroy] do
     resource :likes, only: [:create, :destroy]
     resource :stocks, only: [:create, :destroy]
   end
