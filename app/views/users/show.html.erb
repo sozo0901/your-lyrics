@@ -16,7 +16,6 @@
           <% else %>
             <%= link_to "フォローする", user_relations_path(@user.id), method: :post, class: "btn btn-success border border-secondary mx-3" %>
           <% end %>
-          <%= link_to 'チャットする', chat_path(@user.id), class: "btn btn-dark border border-secondary mx-3" %>
         <% else %>
           <%= link_to "プロフィールを編集", edit_user_path(@user), class: "btn btn-light border border-secondary mx-3" %>
         <% end %>

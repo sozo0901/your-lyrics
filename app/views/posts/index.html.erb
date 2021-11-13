@@ -9,18 +9,15 @@
   </div>
     <div class="text-center">
       <div class="card-body">
-        <%= link_to post_path(post.id) do %>
         <h1 class="card-title text-dark"><%= post.title %></h1>
-        <% end %>
       </div>
     </div>
     <div class="row mx-auto">
-      <%= link_to post_path(post.id) do %>
       <%= attachment_image_tag post, :image, :fill, 200, 200, class: "d-block rounded-circle m-4 shadow" %>
-       <% end %>
     </div>
     <div class="card shadow text-center p-2 m-2">
       <%= simple_format(post.body.truncate(100)) %>
+      <%= link_to "Show more", post_path(post.id), class: "btn btn-outline-dark" %>
     </div>
   </div>
 </div>

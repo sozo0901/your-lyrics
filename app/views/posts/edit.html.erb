@@ -13,8 +13,9 @@
     <h2 class="mb-3">Lyrics</h2>
     <%= f.text_area :body, autofocus: true, class: "form-control" %>
   </div>
-  <div class="mx-5 mb-5 py-5">
-     <%= f.submit '変更を保存', class: "btn btn-primary" %>
+  <div class="mx-5 mb-5 py-5 text-center">
+    <span class="mr-2"><%= link_to "Cancel",post_path(@post.id), class: "form-control btn btn-outline-dark w-25" %></span>
+    <span class="ml-2"><%= f.submit "Save changes", class: "form-control btn btn-outline-dark w-50" %></span>
   </div>
 <% end %>
 </div>
