@@ -17,7 +17,7 @@
         <span class="h3 m-5" id="stock-btn_<%= @post.id %>">
           <%= render "stocks/stock-btn", post: @post %>
         </span>
-        <p class="my-5"><%= @post.created_at.strftime('%Y/%m/%d') %></p>
+        <p class="my-5">投稿日：<%= @post.created_at.strftime('%Y/%m/%d') %></p>
         <h1 class="my-5"><%= @post.title %></h1>
         <%= attachment_image_tag @post, :image, :fill, 250, 250 %>
         <p class="mb-5"><%= simple_format(@post.body) %></p>
