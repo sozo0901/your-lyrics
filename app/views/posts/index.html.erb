@@ -1,24 +1,12 @@
-<% @posts.each do |post| %>
-<div class="container w-75 pt-3">
-  <div class="card shadow m-5">
-    <div class="card shadow mb-3 text-center">
-    <%= link_to user_path(post.user.id), class:"text-dark" do %>
-      <p><%= attachment_image_tag post.user, :image, :fill, 50, 50, fallback:"no_image.jpg", class:"mt-2 rounded-circle" %></p>
-      <p class="mb-2"><%= post.user.name %></p>
-    <% end %>
-  </div>
-    <div class="text-center">
-      <div class="card-body">
-        <h1 class="card-title text-dark"><%= post.title %></h1>
-      </div>
-    </div>
-    <div class="row mx-auto">
-      <%= attachment_image_tag post, :image, :fill, 200, 200, class: "d-block rounded-circle m-4 shadow" %>
-    </div>
-    <div class="card shadow text-center p-2 m-2">
-      <%= simple_format(post.body.truncate(100)) %>
-      <%= link_to "Show more", post_path(post.id), class: "btn btn-outline-dark" %>
-    </div>
-  </div>
-</div>
-<% end %>
+ <ul class="nav justify-content-end">
+  <li class="nav-item">
+    <a class="nav-link disabled text-dark" href="#">投稿が新しい順</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">いいねが多い順</a>
+  </li>
+  <li class="nav-item">
+     <a class="nav-link" href="#">投稿が古い順</a>
+  </li>
+</ul>
+<%= render 'posts/index', posts: @posts %>

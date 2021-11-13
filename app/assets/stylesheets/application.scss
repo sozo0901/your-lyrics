@@ -18,26 +18,6 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
-/* ブラウザがそれぞれ持っているCSSをリセットするための記述 */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
   background-color: #EEEEEE;
 }
-
-header {
-  position: relative;
-  background-color: #333333;
-  width: 100%;
-  height: 70px;
-  margin-bottom: 10px;
-
-  & li {
-    color: white;
-  }
-}
-
