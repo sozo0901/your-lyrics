@@ -1,10 +1,10 @@
 <div class="container border rounded-lg" style="background-color: white;">
   <div class="row">
     <div class="col text-center py-5">
-    <%= link_to user_path(@post.user.id), class:"text-dark" do %>
-      <p><%= attachment_image_tag @post.user, :image, :fill, 150, 150, fallback:"no_image.jpg", class:"mt-3 rounded-circle" %></p>
-      <h3 class="mb-5"><%= @post.user.name %></h3>
-    <% end %>
+      <%= link_to user_path(@post.user.id), class:"text-dark" do %>
+        <p><%= attachment_image_tag @post.user, :image, :fill, 150, 150, fallback:"no_image.jpg", class:"mt-3 rounded-circle" %></p>
+        <h3 class="mb-5"><%= @post.user.name %></h3>
+      <% end %>
        <% if @post.user == current_user %>
         <div class="my-5">
           <%= link_to "投稿を削除する", post_path(@post), method: :delete, data: {confirm: "投稿を削除しますか？" }, class: "mx-5 btn btn-danger" %>
