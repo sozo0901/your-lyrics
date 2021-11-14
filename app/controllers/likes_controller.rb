@@ -13,4 +13,9 @@ class LikesController < ApplicationController
     # app/views/likes/destroy.js.erbを参照する
   end
 
+  def liked_posts
+    post_ids = current_user.likes.pluck(:post_id)
+    @posts = Post.where(id: post_ids).order(created_at: :desc)
+  end
+
 end

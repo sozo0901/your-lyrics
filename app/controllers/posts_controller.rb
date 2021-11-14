@@ -18,6 +18,12 @@ class PostsController < ApplicationController
     @posts = Post.order("id DESC")
   end
 
+  def following_posts
+    user_ids = current_user.following.pluck(:id) # フォローしているユーザーのid一覧
+    user_ids.push(current_user.id) # 自身のidを一覧に追加する
+    @posts = Post.where(user_id: user_ids).order(created_at: :desc)
+  end
+
   def show
     @post = Post.find(params[:id])
   end

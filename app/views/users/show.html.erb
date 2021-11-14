@@ -34,9 +34,11 @@
       <div class="my-3 p-3 h6">
         <%= simple_format(@user.caption) %>
       </div>
+      <div>
+        <%= link_to 'いいねした投稿一覧', liked_posts_path %>
+        <%= link_to '保存した投稿一覧', stocked_posts_path %>
+      </div>
     </div>
   </div>
 </div>
 <%= render 'posts/user-posts', posts: @posts %>
-
-

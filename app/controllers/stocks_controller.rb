@@ -13,4 +13,9 @@ class StocksController < ApplicationController
     # app/views/stocks/destroy.js.erbを参照する
   end
 
+  def stocked_posts
+    post_ids = current_user.stocks.pluck(:post_id)
+    @posts = Post.where(id: post_ids).order(created_at: :desc)
+  end
+
 end
