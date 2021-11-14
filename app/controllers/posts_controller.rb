@@ -4,11 +4,9 @@ class PostsController < ApplicationController
   end
 
   def create
-    # データを新規登録するためのインスタンス作成
     @post = Post.new(post_params)
-    # current_userはdeviseのヘルパーメソッド。deviseを導入しないと使用できない。
     @post.user_id = current_user.id
-   
+
     if @post.save
       redirect_to posts_path
     else
@@ -17,12 +15,30 @@ class PostsController < ApplicationController
   end
 
   def index
-    # タイムライン上に表示する投稿データを取得
-    @posts = Post.all
+    @posts = Post.order("id DESC")
+  end
+
+  def following_posts
+    user_ids = current_user.following.pluck(:id) # フォローしているユーザーのid一覧
+    user_ids.push(current_user.id) # 自身のidを一覧に追加する
+    @posts = Post.where(user_id: user_ids).order(created_at: :desc)
   end
 
   def show
     @post = Post.find(params[:id])
+  end
+
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+      redirect_to post_path(@post.id)
+    else
+      render :edit
+    end
   end
 
   def destroy
