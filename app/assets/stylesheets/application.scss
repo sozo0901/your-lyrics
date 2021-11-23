@@ -18,6 +18,23 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
+@import 'reset';
+@import'variables';
+
 body {
   background-color: #EEEEEE;
+}
+
+.navbar {
+  background-color: black;
+}
+
+@media screen and (max-width: 640px) {
+  .main-visual {
+    padding: 0.4%;
+  }
+  h2 {
+    line-height: 1.6;
+    text-align: center;
+  }
 }
