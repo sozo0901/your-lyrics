@@ -1,3 +1,40 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.post-nav-item {
+  color: black;
+  // background-color: white;
+  font-size: 1.5rem;
+  // border: 1px solid black;
+  // border-radius: 12px;
+  margin: 3em;
+
+  &__text {
+    color: black;
+
+    &:hover {
+      text-decoration: none;
+      color: black;
+    }
+  }
+
+  &__select {
+    color: black;
+    font-weight: 700;
+    // background-color: white;
+    font-size: 1.5rem;
+    // border: 3px solid black;
+    // border-radius: 12px;
+    margin: 3em;
+
+    &__text {
+      color: black;
+
+      &:hover {
+        text-decoration: none;
+        color: black;
+      }
+    }
+  }
+}

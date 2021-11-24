@@ -25,6 +25,35 @@ body {
   background-color: #EEEEEE;
 }
 
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.fa-heart {
+  color: black;
+
+  &:hover {
+    text-decoration: none;
+  }
+  &:link {
+    text-decoration: none;
+  }
+}
+.fa-bookmark {
+  color: black;
+
+  &:hover {
+    text-decoration: none;
+  }
+  &:link {
+    text-decoration: none;
+  }
+}
+
 .navbar {
   background-color: black;
 }

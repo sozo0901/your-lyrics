@@ -1,9 +1,9 @@
-<ul class="nav justify-content-center h3 mb-3">
-  <li class="">
-    <%= link_to "全投稿", posts_path, class: "nav-link" %>
+<ul class="nav justify-content-center h3">
+  <li class="nav-link post-nav-item">
+    <%= link_to "全投稿", posts_path, class: "post-nav-item__text" %>
   </li>
-  <li class="">
-    <%= link_to "フォロー中", following_posts_path, class: "nav-link disabled text-dark" %>
+  <li class="nav-link post-nav-item__select">
+    <%= link_to "フォロー中", following_posts_path, class: "post-nav-item__select__text" %>
   </li>
 </ul>
 <%= render 'posts/index', posts: @posts %>

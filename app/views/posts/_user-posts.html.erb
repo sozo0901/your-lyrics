@@ -1,16 +1,16 @@
 <% posts.each do |post| %>
-<div class="container pt-3">
+<div class="container">
   <div class="card shadow m-5">
     <div class="text-center">
       <div class="card-body">
-        <p class="mb-5">投稿日：<%= post.created_at.strftime('%Y/%m/%d') %></p>
+        <p class="my-5">投稿日：<%= post.created_at.strftime('%Y/%m/%d') %></p>
         <h1 class="card-title text-dark"><%= post.title %></h1>
       </div>
     </div>
     <div class="row mx-auto">
       <%= attachment_image_tag post, :image, :fill, 200, 200, class: "d-block rounded-lg m-4 shadow-lg" %>
     </div>
-    <div class="card shadow text-center p-2 m-2">
+    <div class="text-center p-2 m-2">
       <%= simple_format(post.body.truncate(100)) %>
       <%= link_to "Show more", post_path(post.id), class: "btn btn-outline-dark" %>
     </div>

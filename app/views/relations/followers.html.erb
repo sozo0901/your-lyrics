@@ -1,5 +1,5 @@
 <% if @users.exists? %>
-  <div class="container w-50 mb-2" style="background-color: white">
+  <div class="container my-2" style="background-color: white">
     <div class="row">
       <div class="col">
         <h1 class="display-1 d-flex justify-content-center"><i class="fas fa-user-friends"></i></h1>
@@ -9,7 +9,7 @@
   </div>
   <%= render '/users/index', users: @users %>
 <% else %>
-  <div class="container w-50" style="background-color: white">
+  <div class="container my-2" style="background-color: white">
     <div class="row">
       <div class="col">
         <h1 class="display-1 d-flex justify-content-center"><i class="fas fa-user-friends"></i></h1>

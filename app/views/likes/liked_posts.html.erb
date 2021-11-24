@@ -1,1 +1,20 @@
+<% if @posts.exists? %>
+  <div class="container my-2" style="background-color: white">
+    <div class="row">
+      <div class="col">
+        <h1 class="display-1 d-flex justify-content-center"><i class="fas fa-heart mt-2"></i></h1>
+        <h1 class="d-flex justify-content-center">いいねした投稿一覧</h1>
+      </div>
+    </div>
+  </div>
 <%= render 'posts/index', posts: @posts %>
+<% else %>
+  <div class="container my-2" style="background-color: white">
+    <div class="row">
+      <div class="col">
+        <h1 class="display-1 d-flex justify-content-center"><i class="fas fa-heart mt-2"></i></h1>
+        <h1 class="d-flex justify-content-center">いいねした投稿はありません</h1>
+      </div>
+    </div>
+  </div>
+<% end %>
