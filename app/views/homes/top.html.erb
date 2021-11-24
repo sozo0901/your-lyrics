@@ -1,36 +1,38 @@
-<div class="container">
-  <div class="row">
-    <div class="col mt-5">
-      <div id="main-slide">
-        <div id="theTarget" class="shadow-lg">
-          <div class="main-slide-image1"></div>
-          <div class="main-slide-image2"></div>
-          <div class="main-slide-image3"></div>
-          <div class="main-slide-image4"></div>
-        </div>
-      </div>
-    </div>
+<div id="main-slide">
+  <div id="theTarget" class="shadow-lg">
+    <div class="main-slide-image1"></div>
+    <div class="main-slide-image2"></div>
+    <div class="main-slide-image3"></div>
+    <div class="main-slide-image4"></div>
   </div>
 </div>
-<div class="main-visual my-5 shadow-lg">
-  <h2 class="main-title">People have some stories.<br>People can Write Lyrics.</h2>
+
+<div class="main-visual mb-5 shadow-lg">
+  <h2 class="main-title">People have some stories.<br>People can write lyrics.</h2>
+</div>
+
+<div class="pc-content">
+  <div class="pc-content__btn cubic mt-5  mr-5">
+    <%= link_to new_user_registration_path do %>
+    <span class="hovering">Sign up</span><span class="default">First time user?</span>
+    <% end %>
+  </div>
+  <div class="pc-content__btn cubic mt-5 ml-5">
+    <%= link_to new_user_session_path do %>
+    <span class="hovering">Sign in</span><span class="default">Already have an account?</span>
+    <% end %>
+  </div>
 </div>
 
 <footer class="footer">
-  <div class="logo item">
-    <img src="images/logo.svg" alt="" class="logo__img" />
-    <span class="logo__stay"></span>
-    <span class="logo__world">World</span>
-  </div>
   <nav class="footer__nav">
     <ul class="footer__ul">
-      <li class="footer__li item"><a href="#">Service</a></li>
-      <li class="footer__li item"><a href="#">Contact</a></li>
-      <li class="footer__li item"><a href="#">Company</a></li>
-      <li class="footer__li item"><a href="#">Sitemap</a></li>
+      <li class="footer__li"><a href="#"><i class="fab fa-youtube h2"></i></a></li>
+      <li class="footer__li"><a href="#"><i class="fab fa-spotify h2"></i></a></li>
+      <li class="footer__li"><a href="#"><i class="fab fa-soundcloud h2"></i></a></li>
     </ul>
-    <div class="footer__copyright item">
-      &copy; Your Lryics
-    </div>
   </nav>
+  <div class="footer__copyright">
+    &copy; Your Lryics
+  </div>
 </footer>

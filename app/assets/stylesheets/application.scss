@@ -29,12 +29,26 @@ body {
   background-color: black;
 }
 
-@media screen and (max-width: 640px) {
+.nav-item {
+  color: white;
+  font-size: 1.2rem;
+  border: 1px dashed white;
+  border-radius: 12px;
+  margin: 0.5em;
+
+  &:hover {
+    color: black;
+    transition: background-color 0.3s;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .pc-content {
+    display: none;
+  }
+
   .main-visual {
     padding: 0.4%;
-  }
-  h2 {
-    line-height: 1.6;
-    text-align: center;
   }
 }
