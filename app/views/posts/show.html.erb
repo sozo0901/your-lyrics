@@ -7,6 +7,10 @@
         <%= link_to "投稿を編集する", edit_post_path(@post), class: "mx-5 btn btn-success" %>
       </div>
       <% end %>
+      <%= link_to user_path(@post.user.id), class:"text-dark" do %>
+      <p><%= attachment_image_tag @post.user, :image, :fill, 150, 150, fallback:"no_image.jpg", class:"mt-5 rounded-circle" %></p>
+      <h3 class="mb-5"><%= @post.user.name %></h3>
+      <% end %>
       <span class="h3 m-5" id="like-btn_<%= @post.id %>">
         <%= render "likes/like-btn", post: @post %>
       </span>
@@ -17,10 +21,6 @@
       <h1 class="my-5"><%= @post.title %></h1>
       <%= attachment_image_tag @post, :image, :fill, 250, 250 %>
       <p class="mb-5"><%= simple_format(@post.body) %></p>
-      <%= link_to user_path(@post.user.id), class:"text-dark" do %>
-      <p><%= attachment_image_tag @post.user, :image, :fill, 150, 150, fallback:"no_image.jpg", class:"mt-5 rounded-circle" %></p>
-      <h3 class="mb-5"><%= @post.user.name %></h3>
-      <% end %>
     </div>
   </div>
 </div>
