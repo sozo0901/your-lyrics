@@ -3,8 +3,8 @@
   <div class="card shadow m-5">
     <div class="text-center">
       <div class="card-body">
-        <p class="my-5">投稿日：<%= post.created_at.strftime('%Y/%m/%d') %></p>
-        <h1 class="card-title text-dark"><%= post.title %></h1>
+        <p class="mb-5">投稿日：<%= post.created_at.strftime('%Y/%m/%d') %></p>
+        <h1 class="display-3 song-title"><%= post.title %></h1>
       </div>
     </div>
     <div class="row mx-auto">
@@ -17,5 +17,6 @@
   </div>
 </div>
 <% end %>
-
-
+<div class="d-flex justify-content-center m-3">
+  <%= paginate posts %>
+</div>

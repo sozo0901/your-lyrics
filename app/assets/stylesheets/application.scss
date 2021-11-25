@@ -33,6 +33,14 @@ a {
   }
 }
 
+.page-link{
+  color: black;
+
+  &:hover {
+    color: black;
+  }
+}
+
 .fa-heart {
   color: black;
 
@@ -43,15 +51,26 @@ a {
     text-decoration: none;
   }
 }
+
 .fa-bookmark {
   color: black;
 
   &:hover {
     text-decoration: none;
   }
+
   &:link {
     text-decoration: none;
   }
+}
+
+.song-title {
+  font-family:
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;
 }
 
 .navbar {

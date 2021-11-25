@@ -39,7 +39,6 @@
   }
 }
 
-
 .pc-content {
   display: flex;
   height: 500px;
@@ -123,6 +122,10 @@
 
     & > a {
       color: $cSubTitle;
+
+      &:hover {
+        color: $cSubTitle;
+      }
     }
   }
 
