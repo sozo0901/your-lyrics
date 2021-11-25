@@ -74,6 +74,7 @@ gem 'jquery-rails'
 # Font Awesomeを利用すると、特定のclass名を指定するだけで、1,500個以上のアイコンを挿入できる。
 gem 'font-awesome-sass', '~> 5.13'
 gem 'rails-i18n'
+gem 'kaminari'
 
 gem 'dotenv-rails'
 group :production do
