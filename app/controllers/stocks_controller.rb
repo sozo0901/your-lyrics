@@ -15,7 +15,6 @@ class StocksController < ApplicationController
 
   def stocked_posts
     post_ids = current_user.stocks.pluck(:post_id)
-    @posts = Post.where(id: post_ids).order(created_at: :desc)
+    @posts = Post.where(id: post_ids).page(params[:page]).order(created_at: :desc)
   end
-
 end

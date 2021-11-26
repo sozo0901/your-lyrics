@@ -1,31 +1,36 @@
 <% posts.each do |post| %>
-<div class="container pt-3">
-  <div class="card shadow m-5">
-    <div class="card shadow mb-3 text-center">
-    <%= link_to user_path(post.user.id), class:"text-dark" do %>
-      <p><%= attachment_image_tag post.user, :image, :fill, 50, 50, fallback:"no_image.jpg", class:"mt-2 rounded-circle" %></p>
-      <p class="mb-2"><%= post.user.name %></p>
-    <% end %>
-  </div>
+<div class="container mb-5">
+  <div class="card shadow">
     <div class="text-center">
       <div class="card-body">
-        <span class="h3 m-5" id="like-btn_<%= post.id %>">
-          <%= render "likes/like-btn", post: post %>
-        </span>
-        <span class="h3 m-5" id="stock-btn_<%= post.id %>">
-          <%= render "stocks/stock-btn", post: post %>
-        </span>
-        <p class="my-5">投稿日：<%= post.created_at.strftime('%Y/%m/%d') %></p>
-        <h1 class="card-title text-dark"><%= post.title %></h1>
+        <div class="mb-3 text-center">
+          <%= link_to user_path(post.user.id), class:"text-dark" do %>
+            <div><%= attachment_image_tag post.user, :image, :fill, 80, 80, fallback:"no_image.jpg", class:"mt-2 rounded-circle" %></div>
+            <h4 class="mb-2"><%= post.user.name %></h4>
+          <% end %>
+        </div>
+        <p class="mb-5">投稿日：<%= post.created_at.strftime('%Y/%m/%d') %></p>
+        <div class="m-5">
+          <span class="h4 m-3" id="like-btn_<%= post.id %>">
+            <%= render "likes/like-btn", post: post %>
+          </span>
+          <span class="h4 m-3" id="stock-btn_<%= post.id %>">
+            <%= render "stocks/stock-btn", post: post %>
+          </span>
+        </div>
+        <h1 class="song-title"><%= post.title %></h1>
       </div>
     </div>
     <div class="row mx-auto">
       <%= attachment_image_tag post, :image, :fill, 200, 200, class: "d-block rounded-lg m-4 shadow-lg" %>
     </div>
-    <div class="card shadow text-center p-2 m-2">
-      <%= simple_format(post.body.truncate(100)) %>
+    <div class="song-lyrics text-center p-2 m-2">
+      <p><%= simple_format(post.body.truncate(100)) %></p>
       <%= link_to "Show more", post_path(post.id), class: "btn btn-outline-dark" %>
     </div>
   </div>
 </div>
 <% end %>
+<div class="d-flex justify-content-center m-3">
+  <%= paginate posts %>
+</div>

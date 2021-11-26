@@ -1,29 +1,32 @@
-<div class="container border rounded-lg w-50" style="background-color: white;">
-<%= form_with model: @user, local: true do |f| %>
-
-  <div class="form-group text-center mx-5 pt-5">
-    <%= attachment_image_tag @user, :image, :fill, 150, 150, fallback: "no_image.jpg", class: "rounded-circle mb-3" %><br>
-    <%= f.attachment_field :image, placeholder: "プロフィール画像",class: "offset-2" %>
+<div class="container border rounded-lg" style="background-color: white;">
+  <div class="row">
+    <div class="col">
+      <%= form_with model: @user, local: true do |f| %>
+        <div class="form-group text-center mx-5 pt-5">
+          <%= attachment_image_tag @user, :image, :fill, 150, 150, fallback: "no_image.jpg", class: "rounded-circle mb-3" %><br>
+          <%= f.attachment_field :image, placeholder: "プロフィール画像",class: "offset-2" %>
+        </div>
+        <div class="form-group mx-5 pt-5">
+          <h3><%= f.label :ニックネーム %></h3>
+          <%= f.text_field :name, autofocus: true, class: "form-control" %>
+        </div>
+        <div class="form-group mx-5 pt-5">
+          <h3><%= f.label :メールアドレス %></h3>
+          <small class="form-text text-muted ">ログイン時に必要です</small>
+          <%= f.text_field :email, autofocus: true, class: "form-control" %>
+        </div>
+        <div class="form-group mx-5 mt-2 pt-5">
+          <h3><%= f.label :自己紹介 %></h3>
+          <%= f.text_area :caption, autofocus: true, id:"inputName", placeholder:"自己紹介", class: "caption form-control"%>
+        </div>
+        <div class="mx-5 mb-5 py-2 text-center">
+          <span class="mr-2"><%= link_to "Cancel",user_path(@user.id), class: "form-control btn btn-outline-dark w-25" %></span>
+          <span class="ml-2"><%= f.submit "Save changes", class: "form-control btn btn-outline-dark w-50" %></span>
+        </div>
+        <div class="mx-5 my-5 pt-5 text-center">
+          <%= link_to "アカウントを削除する",user_path(@user.id), method: :delete, data: {confirm: "本当にアカウントを削除しますか？" }, class: "btn btn-outline-danger" %>
+        </div>
+      <% end %>
+    </div>
   </div>
-
-  <div class="form-group h3 mx-5 pt-5">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, class: "form-control" %>
-  </div>
-
-  <div class="form-group h3 mx-5 mt-2 pt-5">
-    <%= f.label :caption %><br />
-    <%= f.text_area :caption, autofocus: true, id:"inputName", placeholder:"自己紹介", class: "caption form-control"%>
-  </div>
-
-  <div class="mx-5 mb-5 py-2 text-center">
-    <span class="mr-2"><%= link_to "Cancel",user_path(@user.id), class: "form-control btn btn-outline-dark w-25" %></span>
-    <span class="ml-2"><%= f.submit "Save changes", class: "form-control btn btn-outline-dark w-50" %></span>
-  </div>
-
-  <div class="mx-5 my-5 pt-5 text-center">
-    <%= link_to "アカウントを削除する",user_path(@user.id), method: :delete, data: {confirm: "本当にアカウントを削除しますか？" }, class: "btn btn-danger" %>
-  </div>
-
-<% end %>
 </div>

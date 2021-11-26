@@ -18,6 +18,141 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
+@import 'reset';
+@import'variables';
+
 body {
   background-color: #EEEEEE;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.page-link{
+  color: black;
+
+  &:hover {
+    color: black;
+  }
+}
+
+.fa-heart {
+  color: black;
+
+  &:hover {
+    text-decoration: none;
+  }
+  &:link {
+    text-decoration: none;
+  }
+}
+
+.fa-bookmark {
+  color: black;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:link {
+    text-decoration: none;
+  }
+}
+
+.page-title {
+  font-weight: bold;
+  font-family:
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;
+}
+
+.song-title {
+  font-family:
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;
+}
+
+.navbar {
+  background-color: black;
+}
+
+.nav-link {
+  color: white;
+  font-size: 1.2rem;
+  border: 1px dashed white;
+  border-radius: 12px;
+  margin: 0.5em;
+
+  &:hover {
+    color: black;
+    transition: background-color 0.2s;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+
+.footer {
+  padding: 30px 0;
+  width: 100%;
+  background-color: $cBlack;
+
+  &__nav {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__ul {
+    display: flex;
+    padding: 0;
+    margin-bottom: 30px;
+    list-style: none;
+  }
+
+  &__li {
+    margin-left: 30px;
+    margin-right: 30px;
+
+    & > a {
+      color: $cSubTitle;
+
+      &:hover {
+        color: $cSubTitle;
+      }
+    }
+  }
+
+  &__copyright {
+    color: $cWhite;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .pc-content {
+    display: none;
+  }
+
+  .main-visual {
+    padding: 0.4%;
+  }
+
+  .song-title {
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  .song-lyrics {
+    font-size: 13px;
+  }
 }

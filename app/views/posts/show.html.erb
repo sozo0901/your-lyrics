@@ -3,8 +3,8 @@
     <div class="col text-center py-5">
       <% if @post.user == current_user %>
       <div class="my-5">
-        <%= link_to "投稿を削除する", post_path(@post), method: :delete, data: {confirm: "投稿を削除しますか？" }, class: "mx-5 btn btn-danger" %>
-        <%= link_to "投稿を編集する", edit_post_path(@post), class: "mx-5 btn btn-success" %>
+        <%= link_to "投稿を削除する", post_path(@post), method: :delete, data: {confirm: "投稿を削除しますか？" }, class: "mx-5 btn btn-outline-danger" %>
+        <%= link_to "投稿を編集する", edit_post_path(@post), class: "mx-5 btn btn-outline-success" %>
       </div>
       <% end %>
       <span class="h3 m-5" id="like-btn_<%= @post.id %>">
@@ -13,14 +13,14 @@
       <span class="h3 m-5" id="stock-btn_<%= @post.id %>">
         <%= render "stocks/stock-btn", post: @post %>
       </span>
-      <p class="my-5">投稿日：<%= @post.created_at.strftime('%Y/%m/%d') %></p>
-      <h1 class="my-5"><%= @post.title %></h1>
+      <h1 class="song-title my-5"><%= @post.title %></h1>
       <%= attachment_image_tag @post, :image, :fill, 250, 250 %>
-      <p class="mb-5"><%= simple_format(@post.body) %></p>
+      <p class="song-lyrics mb-5"><%= simple_format(@post.body) %></p>
       <%= link_to user_path(@post.user.id), class:"text-dark" do %>
       <p><%= attachment_image_tag @post.user, :image, :fill, 150, 150, fallback:"no_image.jpg", class:"mt-5 rounded-circle" %></p>
       <h3 class="mb-5"><%= @post.user.name %></h3>
       <% end %>
+      <p class="mt-5">投稿日：<%= @post.created_at.strftime('%Y/%m/%d') %></p>
     </div>
   </div>
 </div>

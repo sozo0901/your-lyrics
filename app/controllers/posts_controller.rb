@@ -8,20 +8,20 @@ class PostsController < ApplicationController
     @post.user_id = current_user.id
 
     if @post.save
-      redirect_to posts_path
+      redirect_to post_path(@post)
     else
       render :new
     end
   end
 
   def index
-    @posts = Post.order("id DESC")
+    @posts = Post.page(params[:page]).order("id DESC")
   end
 
   def following_posts
     user_ids = current_user.following.pluck(:id) # フォローしているユーザーのid一覧
     user_ids.push(current_user.id) # 自身のidを一覧に追加する
-    @posts = Post.where(user_id: user_ids).order(created_at: :desc)
+    @posts = Post.where(user_id: user_ids).page(params[:page]).order(created_at: :desc)
   end
 
   def show
@@ -44,7 +44,8 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to posts_path
+    @user = @post.user
+    redirect_to user_path(@user.id)
   end
 
   private
@@ -52,5 +53,4 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :image, :body)
   end
-
 end

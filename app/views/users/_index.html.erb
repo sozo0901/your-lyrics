@@ -1,18 +1,18 @@
  <% users.each do |user| %>
-<div class="container w-50" style="background-color: white">
-  <div class="row border-bottom d-flex align-items-center">
-    <div class="col">
+<div class="container" style="background-color: white">
+  <div class="row border-bottom align-items-center">
+    <div class="col-3">
       <%= link_to user_path(user.id) do %>
-      <span class="mt-4 d-flex justify-content-start"><%= attachment_image_tag user, :image, :fill, 100, 100, fallback: "no_image.jpg", class: "rounded-circle border mb-3" %></span>
+      <span class="mt-4 d-flex justify-content-start"><%= attachment_image_tag user, :image, :fill, 100, 100, fallback: "no_image.jpg", class: "rounded-circle mb-3" %></span>
     </div>
-    <div class="col">
-      <h4 class="my-5 text-dark"><%= user.name %></h4>
+    <div class="col-3">
+      <h4 class="text-dark"><%= user.name %></h4>
     </div>
   <% end %>
     <div class="col d-flex justify-content-end">
       <% if current_user != user %>
         <% if current_user.following?(user) %>
-          <%= link_to "フォロー中", user_relations_path(user.id), method: :delete, data: {confirm: "フォローを解除しますか？" }, class: "btn btn-primary my-5 text-end" %>
+          <%= link_to "フォロー中", user_relations_path(user.id), method: :delete, data: {confirm: "フォローを解除しますか？" }, class: "btn btn-primary" %>
         <% else %>
           <%= link_to "フォローする", user_relations_path(user.id), method: :post, class: "btn btn-success" %>
         <% end %>
