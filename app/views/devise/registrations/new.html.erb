@@ -1,25 +1,26 @@
-<div class="container">
+<div class="container" style="background-color: white;">
   <div class="row">
     <div class="col">
       <%= render 'layouts/errors', obj: @user %>
-      <h1 class="text-center mt-3 display-2">Sign up</h1>
+      <h1 class="text-center mt-3 display-2 page-title">Sign up</h1>
       <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
         <div class="form-group mx-5 pt-5">
-          <%= f.label :ニックネーム %><br />
+          <h3><%= f.label :ニックネーム %></h3>
           <small class="form-text text-muted mb-2">20文字以内</small>
           <%= f.text_field :name, autofocus: true, class: "form-control" %>
         </div>
         <div class="form-group mx-5 mt-2 pt-5">
-          <%= f.label :メールアドレス %><br />
+          <h3><%= f.label :メールアドレス %></h3>
+          <small class="form-text text-muted ">ログイン時に必要です</small>
           <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
         </div>
         <div class="form-group mx-5 mt-2 pt-5">
-          <%= f.label :パスワード %>
+          <h3><%= f.label :パスワード %></h3>
           <small class="form-text text-muted mb-2"><%= @minimum_password_length %> 文字以上</small>
           <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
         </div>
         <div class="form-group mx-5 mt-2 pt-5">
-          <%= f.label :パスワード確認 %><br />
+          <h3><%= f.label :パスワード確認 %></h3>
           <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
         </div>
         <div class="mx-5 mb-5 py-5 text-center">

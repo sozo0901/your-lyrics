@@ -41,6 +41,7 @@
 
 .pc-content {
   display: flex;
+  background-color: $cWhite;
   height: 500px;
   text-align: center;
   align-items: center;
@@ -69,7 +70,7 @@
         border: 4px ridge rgba(36, 20, 14, .6);
         line-height: 192px;
         text-align: center;
-        transition: all 0.3s;
+        transition: all 0.4s;
         transform-origin: center center -100px;
       }
 
@@ -99,37 +100,3 @@
   }
 }
 
-.footer {
-  padding: 60px 0;
-  width: 100%;
-  background-color: white;
-
-  &__nav {
-    display: flex;
-    justify-content: center;
-  }
-
-  &__ul {
-    display: flex;
-    padding: 0;
-    margin-bottom: 30px;
-    list-style: none;
-  }
-
-  &__li {
-    margin-left: 30px;
-    margin-right: 30px;
-
-    & > a {
-      color: $cSubTitle;
-
-      &:hover {
-        color: $cSubTitle;
-      }
-    }
-  }
-
-  &__copyright {
-    text-align: center;
-  }
-}

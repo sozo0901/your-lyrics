@@ -64,6 +64,16 @@ a {
   }
 }
 
+.page-title {
+  font-weight: bold;
+  font-family:
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;
+}
+
 .song-title {
   font-family:
     Arial,
@@ -79,7 +89,7 @@ a {
 
 .nav-item {
   color: white;
-  font-size: 1.2rem;
+  font-size: 1.0rem;
   border: 1px dashed white;
   border-radius: 12px;
   margin: 0.5em;
@@ -91,6 +101,42 @@ a {
   }
 }
 
+.footer {
+  padding: 60px 0;
+  width: 100%;
+  background-color: $cBlack;
+
+  &__nav {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__ul {
+    display: flex;
+    padding: 0;
+    margin-bottom: 30px;
+    list-style: none;
+  }
+
+  &__li {
+    margin-left: 30px;
+    margin-right: 30px;
+
+    & > a {
+      color: $cSubTitle;
+
+      &:hover {
+        color: $cSubTitle;
+      }
+    }
+  }
+
+  &__copyright {
+    color: $cWhite;
+    text-align: center;
+  }
+}
+
 @media screen and (max-width: 960px) {
   .pc-content {
     display: none;
@@ -98,5 +144,14 @@ a {
 
   .main-visual {
     padding: 0.4%;
+  }
+
+  .song-title {
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  .song-lyrics {
+    font-size: 13px;
   }
 }

@@ -7,8 +7,7 @@
 .post-nav-item {
   color: black;
   font-size: 1.5rem;
-
-  margin: 3em;
+  margin: 2em;
 
   &__text {
     color: $cSubTitle;
@@ -23,7 +22,7 @@
     color: black;
     font-weight: 700;
     font-size: 1.5rem;
-    margin: 3em;
+    margin: 2em;
 
     &__text {
       color: black;
@@ -34,4 +33,13 @@
       }
     }
   }
+}
+
+.song-title {
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.song-lyrics {
+  font-size: 17px;
 }

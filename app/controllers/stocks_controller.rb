@@ -17,5 +17,4 @@ class StocksController < ApplicationController
     post_ids = current_user.stocks.pluck(:post_id)
     @posts = Post.where(id: post_ids).order(created_at: :desc)
   end
-
 end

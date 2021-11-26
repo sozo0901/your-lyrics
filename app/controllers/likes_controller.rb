@@ -17,5 +17,4 @@ class LikesController < ApplicationController
     post_ids = current_user.likes.pluck(:post_id)
     @posts = Post.where(id: post_ids).order(created_at: :desc)
   end
-
 end

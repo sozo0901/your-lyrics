@@ -1,4 +1,4 @@
-<div class="container border rounded-lg" style="background-color: #fff;">
+<div class="container mb-3 border rounded-lg" style="background-color: #fff;">
   <div class="row text-center border rounded-lg">
     <div class="col-3 m-3">
       <div class="text-center">
@@ -18,7 +18,7 @@
           <%= link_to "プロフィールを編集", edit_user_path(@user), class: "btn btn-light border border-secondary mx-3" %>
         <% end %>
       </div>
-      <div class="h5 d-flex justify-content-center mt-3">
+      <div class="h5 d-flex justify-content-center mt-5">
         <span class="mx-2">投稿 <%= @user.posts.count %>件</span>
 
         <%= link_to user_following_path(@user), class:"text-dark" do %>

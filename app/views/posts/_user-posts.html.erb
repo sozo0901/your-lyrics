@@ -1,10 +1,18 @@
 <% posts.each do |post| %>
-<div class="container">
-  <div class="card shadow m-5">
+<div class="container mb-3">
+  <div class="card shadow">
     <div class="text-center">
       <div class="card-body">
         <p class="mb-5">投稿日：<%= post.created_at.strftime('%Y/%m/%d') %></p>
-        <h1 class="display-3 song-title"><%= post.title %></h1>
+        <div class="m-5">
+          <span class="h4 m-3" id="like-btn_<%= post.id %>">
+            <%= render "likes/like-btn", post: post %>
+          </span>
+          <span class="h4 m-3" id="stock-btn_<%= post.id %>">
+            <%= render "stocks/stock-btn", post: post %>
+          </span>
+        </div>
+        <h1 class="h1 song-title"><%= post.title %></h1>
       </div>
     </div>
     <div class="row mx-auto">
