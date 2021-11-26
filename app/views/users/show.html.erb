@@ -1,11 +1,11 @@
 <div class="container mb-3 border rounded-lg" style="background-color: #fff;">
   <div class="row text-center border rounded-lg">
-    <div class="col-3 m-3">
+    <div class="col-md-3 m-3">
       <div class="text-center">
         <%= attachment_image_tag @user, :image, :fill, 200, 200, format:'jpeg', fallback:"no_image.jpg", class: "rounded-circle border" %>
       </div>
     </div>
-    <div class="col-8 mt-3">
+    <div class="col-md-8 mt-3">
       <div class="h2 d-flex justify-content-center mt-3">
         <%= @user.name %>
         <% if current_user != @user %>
@@ -33,12 +33,14 @@
         <%= simple_format(@user.caption) %>
       </div>
       <div>
+      <% if current_user == @user %>
         <%= link_to liked_posts_path do %>
           <i class="fas fa-heart h3 mb-2 mr-5"></i>
         <% end %>
         <%= link_to stocked_posts_path do %>
           <i class="fas fa-bookmark h3 mb-2 ml-5"></i>
         <% end %>
+      <% end %>
       </div>
     </div>
   </div>

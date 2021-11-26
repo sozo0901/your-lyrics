@@ -1,6 +1,7 @@
 <div class="container" style="background-color: white;">
   <div class="row">
     <div class="col">
+      <%= render 'layouts/errors', obj: @post %>
       <%= form_with model: @post, local:true do |f| %>
         <div class="form-group mx-5 pt-5">
           <h2 class="mb-3">Song Title</h2>
