@@ -8,7 +8,7 @@ class Post < ApplicationRecord
   # # Postモデルに対して、Stockモデルが1:Nになるように関連付け
   has_many :stocks, dependent: :destroy
   # titleとbodyにバリデーション
-  validates :title, presence: true, length: { maximum: 20 }
+  validates :title, presence: true, length: { maximum: 50 }
   validates :body, presence: true, length: { maximum: 20000 }
   # liked_by?メソッドで、引数で渡されたユーザidがLikesテーブル内に存在（exists?）するかどうかを調べる。存在していればtrue、存在していなければfalseを返す。
   def liked_by?(user)
