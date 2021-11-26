@@ -1,11 +1,11 @@
-<header class="shadow-sm mb-2">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<header class="shadow-sm">
+  <nav class="navbar navbar-expand-lg navbar-dark p-3">
     <div class="container">
       <div class="mr-auto">
         <% if user_signed_in? %>
-          <%= link_to image_tag("your_lyrics-removebg.png", size: "200x40"), posts_path %>
+          <%= link_to image_tag("your_lyrics-remove.png", size: "250x50"), posts_path %>
         <% else %>
-          <%= link_to image_tag("your_lyrics-removebg.png", size: "200x40"), root_path %>
+          <%= link_to image_tag("your_lyrics-remove.png", size: "250x50"), root_path %>
         <% end %>
       </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,23 +15,23 @@
         <ul class="navbar-nav ml-auto">
         <% if user_signed_in? %>
         <li class="nav-item">
-          <%= link_to 'Home', posts_path, class: 'nav-link text-light mx-2' %>
+          <%= link_to 'Home', posts_path, class: 'nav-link text-light mx-4' %>
         </li>
         <li class="nav-item">
-          <%= link_to 'Post', new_post_path, class: 'nav-link text-light mx-2' %>
+          <%= link_to 'Upload', new_post_path, class: 'nav-link text-light mx-4' %>
         </li>
         <li class="nav-item">
-          <%= link_to 'Profile', user_path(current_user.id), class: 'nav-link text-light mx-2' %>
+          <%= link_to 'My page', user_path(current_user.id), class: 'nav-link text-light mx-4' %>
         </li>
         <li class="nav-item">
-          <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: 'nav-link text-light mx-2' %>
+          <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: 'nav-link text-light mx-4' %>
         </li>
         <% else %>
         <li class="nav-item">
-           <%= link_to "Sign up", new_user_registration_path, class: 'nav-link text-light mx-2' %>
+           <%= link_to "Sign up", new_user_registration_path, class: 'nav-link text-light mx-4' %>
         </li>
         <li class="nav-item">
-          <%= link_to "Sign in", new_user_session_path, class: 'nav-link text-light mx-2' %>
+          <%= link_to "Sign in", new_user_session_path, class: 'nav-link text-light mx-4' %>
         </li>
         <% end %>
         </ul>
@@ -39,4 +39,3 @@
     </div>
   </nav>
 </header>
-
