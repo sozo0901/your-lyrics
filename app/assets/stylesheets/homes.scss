@@ -9,16 +9,16 @@
   height: 500px;
 }
 .main-slide-image1 {
-  background-image: url(main-slide-image1.jpg);
+  background-image: image-url("main-slide-image1.jpg");
 }
 .main-slide-image2 {
-  background-image: url(main-slide-image2.jpg);
+  background-image: image-url("main-slide-image2.jpg");
 }
 .main-slide-image3 {
-  background-image: url(main-slide-image3.jpg);
+  background-image: image-url("main-slide-image3.jpg");
 }
 .main-slide-image4 {
-  background-image: url(main-slide-image4.jpg);
+  background-image: image-url("main-slide-image4.jpg");
 }
 
 .main-visual {
@@ -26,7 +26,7 @@
   justify-content: center;
   align-items: start;
   height: 500px;
-  background: url('main-visual-image.jpg') top center / cover no-repeat;
+  background: image-url("main-visual-image.jpg") top center / cover no-repeat;
 
   &__title {
     margin: 0;
