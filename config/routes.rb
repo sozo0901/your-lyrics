@@ -14,4 +14,6 @@ Rails.application.routes.draw do
   get 'following-posts' => 'posts#following_posts', as: 'following_posts'
   get 'liked' => 'likes#liked_posts', as: 'liked_posts'
   get 'stocked' => 'stocks#stocked_posts', as: 'stocked_posts'
+
+  get '/search', to: 'searches#search'
 end
