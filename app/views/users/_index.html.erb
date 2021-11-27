@@ -1,11 +1,9 @@
  <% users.each do |user| %>
 <div class="container" style="background-color: white">
   <div class="row border-bottom align-items-center">
-    <div class="col-3">
+    <div class="col">
       <%= link_to user_path(user.id) do %>
       <span class="mt-4 d-flex justify-content-start"><%= attachment_image_tag user, :image, :fill, 100, 100, fallback: "no_image.jpg", class: "rounded-circle mb-3" %></span>
-    </div>
-    <div class="col-3">
       <h4 class="text-dark"><%= user.name %></h4>
     </div>
   <% end %>
