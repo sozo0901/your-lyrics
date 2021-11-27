@@ -4,7 +4,7 @@
       <div class="mt-5 text-center">
         <%= form_with url: search_path, method: :get, local: true do |f| %>
           <%= f.text_field :content, class: 'border border-dark' %>
-          <%= f.select :model, options_for_select({ "User" => "user", "Post" => "post" }) %>
+          <%= f.select :model, options_for_select({ "User" => "user", "Title" => "post" }) %>
           <%= f.submit '検索', class: 'btn btn-outline-success' %>
         <% end %>
       </div>
