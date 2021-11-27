@@ -18,4 +18,9 @@ class Post < ApplicationRecord
   def stocked_by?(user)
     stocks.where(user_id: user.id).exists?
   end
+  
+  def self.search_for(content)
+    Post.where('title LIKE ?', '%' + content + '%')
+  end
+
 end

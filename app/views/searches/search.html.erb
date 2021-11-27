@@ -1,0 +1,19 @@
+<% if @model == 'user' %>
+  <div class="container my-2" style="background-color: white">
+    <div class="row">
+      <div class="col">
+        <h3>ユーザー検索結果" <%= @content %> "</h3>
+      </div>
+    </div>
+  </div>
+  <%= render 'users/index', users: @records %>
+<% elsif @model == 'post' %>
+  <div class="container my-2" style="background-color: white">
+    <div class="row">
+      <div class="col">
+        <h3>投稿検索結果" <%= @content %> "</h3>
+      </div>
+    </div>
+  </div>
+  <%= render 'posts/index', posts: @records %>
+<% end %>
