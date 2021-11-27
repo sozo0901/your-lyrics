@@ -1,6 +1,7 @@
 <div class="container border rounded-lg" style="background-color: white;">
   <div class="row">
     <div class="col">
+      <%= render 'layouts/errors', obj: @user %>
       <%= form_with model: @user, local: true do |f| %>
         <div class="form-group text-center mx-5 pt-5">
           <%= attachment_image_tag @user, :image, :fill, 150, 150, fallback: "no_image.jpg", class: "rounded-circle mb-3" %><br>
@@ -8,6 +9,7 @@
         </div>
         <div class="form-group mx-5 pt-5">
           <h3><%= f.label :ニックネーム %></h3>
+          <small class="form-text text-muted ">20文字以内</small>
           <%= f.text_field :name, autofocus: true, class: "form-control" %>
         </div>
         <div class="form-group mx-5 pt-5">
@@ -17,6 +19,7 @@
         </div>
         <div class="form-group mx-5 mt-2 pt-5">
           <h3><%= f.label :自己紹介 %></h3>
+          <small class="form-text text-muted ">100文字以内</small>
           <%= f.text_area :caption, autofocus: true, id:"inputName", placeholder:"自己紹介", class: "caption form-control"%>
         </div>
         <div class="mx-5 mb-5 py-2 text-center">
