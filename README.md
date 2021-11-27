@@ -42,10 +42,10 @@ SNSの普及に伴もなって、他者の表現や意見が目に入りやす�
 https://your-lyrics.tokyo
 
 ## 設計書
-ER図は<a href="https://drive.google.com/file/d/1obv3CJuinwOPm1IsIuSQ4RAtUrGf_PT7/view?usp=sharing">こちら</a>
-<br>画面遷移図は<a href="https://drive.google.com/file/d/1YpJ0q_KXWn00c_erWH2fYTk-1jQU-6ua/view?usp=sharing">こちら</a>
-<br>テーブル定義書は<a href="https://docs.google.com/spreadsheets/d/1YterTRGlcb3r_NHBQ7AswEAmYkwP7DXk/edit?usp=sharing&ouid=104052515115004400427&rtpof=true&sd=true">こちら</a>
-<br>アプリケーション詳細設計は<a href="https://docs.google.com/spreadsheets/d/1PXCpL6UH8q5dI-ur67yX7IFDIwPTLl3M/edit?usp=sharing&ouid=104052515115004400427&rtpof=true&sd=true">こちら</a>
+ER図は<a href="https://drive.google.com/file/d/1obv3CJuinwOPm1IsIuSQ4RAtUrGf_PT7/view?usp=sharing">こちら</a><br>
+画面遷移図は<a href="https://drive.google.com/file/d/1YpJ0q_KXWn00c_erWH2fYTk-1jQU-6ua/view?usp=sharing">こちら</a><br>
+テーブル定義書は<a href="https://docs.google.com/spreadsheets/d/1YterTRGlcb3r_NHBQ7AswEAmYkwP7DXk/edit?usp=sharing&ouid=104052515115004400427&rtpof=true&sd=true">こちら</a><br>
+アプリケーション詳細設計は<a href="https://docs.google.com/spreadsheets/d/1PXCpL6UH8q5dI-ur67yX7IFDIwPTLl3M/edit?usp=sharing&ouid=104052515115004400427&rtpof=true&sd=true">こちら</a><br>
 
 
 ## チャレンジ要素一覧
