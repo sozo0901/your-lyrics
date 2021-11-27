@@ -1,5 +1,7 @@
 # Your Lyrics
 
+<img width="1440" alt="top-image" src="README-top.png">
+
 ## サイト概要
 歌詞をもっと自由に捉えて、曲があっての歌詞ではなく、歌詞からメロディーを連想させてくれるような感覚、アイデアをユーザー同士でシェア。自分の感情を表現する手段としての歌詞を共有する。歌詞と限定することで、他のSNSとの差別化、より感情に特化した自己表現がしやすい環境を提供し、人々のクリエイティビティの発展に貢献する。
 
@@ -25,8 +27,8 @@
 
 **②感情表現への誹謗中傷を少しでも無くしていきたいと思ったため**
 
-日本には「ポエマー」という言葉があるが、基本的にはSNSなどで自身の感情や考え方を抒情的に表現している人に向けて、中傷の意味を持って使われている言葉である。
-「見ていて痛い」などの感情は個人で感じる分には妥当だが、それを表現者への敵意や誹謗中傷に繋げるの良くない。
+日本には「ポエマー」という言葉があり、基本的にはSNSなどで自身の感情や考え方を抒情的に表現している人に向けて、中傷の意味を持って使われている言葉である。
+個人的に妥当だが、それを表現者への敵意や誹謗中傷に繋げるの良くない。
 この風潮を無くしていくためにも、感情表現を気軽に自由に行える場所が必要だと思い、このテーマを考えた。
 
 ### ターゲットユーザ
@@ -36,25 +38,23 @@
 作曲作詞活動をする中で、他者の表現を参考にしたい時
 日々の生活では感じにくい自分の感情を整理する時
 
+## サイトURL
+https://your-lyrics.tokyo
+
 ## 設計書
+ER図は<a href="https://drive.google.com/file/d/1obv3CJuinwOPm1IsIuSQ4RAtUrGf_PT7/view?usp=sharing">こちら</a>
+<br>画面遷移図は<a href="https://drive.google.com/file/d/1YpJ0q_KXWn00c_erWH2fYTk-1jQU-6ua/view?usp=sharing">こちら</a>
+<br>テーブル定義書は<a href="https://docs.google.com/spreadsheets/d/1YterTRGlcb3r_NHBQ7AswEAmYkwP7DXk/edit?usp=sharing&ouid=104052515115004400427&rtpof=true&sd=true">こちら</a>
+<br>アプリケーション詳細設計は<a href="https://docs.google.com/spreadsheets/d/1PXCpL6UH8q5dI-ur67yX7IFDIwPTLl3M/edit?usp=sharing&ouid=104052515115004400427&rtpof=true&sd=true">こちら</a>
 
-  
+
 ## チャレンジ要素一覧
+チャレンジ要素一覧は<a href="https://docs.google.com/spreadsheets/d/1whh7FKesHl08wubDF5rXDKBKCPMSCz4VAWJ4DwMl3J4/edit?usp=sharing">こちら</a>
 
-  <https://docs.google.com/spreadsheets/d/1whh7FKesHl08wubDF5rXDKBKCPMSCz4VAWJ4DwMl3J4/edit?usp=sharing>
-
-  
 
 ## 開発環境
-
-  
-
 - OS：Linux(CentOS)
-
 - 言語：HTML,CSS,JavaScript,Ruby,SQL
-
 - フレームワーク：Ruby on Rails
-
 - JS ライブラリ：jQuery
-
 - IDE：Cloud9
