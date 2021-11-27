@@ -46,7 +46,6 @@ ER図は<a href="https://drive.google.com/file/d/1obv3CJuinwOPm1IsIuSQ4RAtUrGf_P
 画面遷移図は<a href="https://drive.google.com/file/d/1YpJ0q_KXWn00c_erWH2fYTk-1jQU-6ua/view?usp=sharing" target="_blank" rel="noopener noreferrer">こちら</a><br>
 テーブル定義書は<a href="https://docs.google.com/spreadsheets/d/1YterTRGlcb3r_NHBQ7AswEAmYkwP7DXk/edit?usp=sharing&ouid=104052515115004400427&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">こちら</a><br>
 アプリケーション詳細設計は<a href="https://docs.google.com/spreadsheets/d/1PXCpL6UH8q5dI-ur67yX7IFDIwPTLl3M/edit?usp=sharing&ouid=104052515115004400427&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">こちら</a><br>
-[link](https://docs.google.com/spreadsheets/d/1PXCpL6UH8q5dI-ur67yX7IFDIwPTLl3M/edit?usp=sharing&ouid=104052515115004400427&rtpof=true&sd=true){:target="_blank"}
 
 
 ## チャレンジ要素一覧
