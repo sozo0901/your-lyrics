@@ -53,7 +53,7 @@ ER図は<a href="https://drive.google.com/file/d/1obv3CJuinwOPm1IsIuSQ4RAtUrGf_P
 
 
 ## 開発環境
-- OS：Linux(CentOS)
+- OS：Amazon Linux release 2 (Karoo)
 - 言語：HTML,CSS,JavaScript,Ruby,SQL
 - フレームワーク：Ruby on Rails
 - JS ライブラリ：jQuery
