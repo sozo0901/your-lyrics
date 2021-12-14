@@ -23,8 +23,8 @@
           <%= f.text_area :caption, autofocus: true, id:"inputName", placeholder:"自己紹介", class: "caption form-control"%>
         </div>
         <div class="mx-5 mb-5 py-2 text-center">
-          <span class="mr-2"><%= link_to "Cancel",user_path(@user.id), class: "form-control btn btn-outline-dark w-25" %></span>
-          <span class="ml-2"><%= f.submit "Save changes", class: "form-control btn btn-outline-dark w-50" %></span>
+          <span class="mx-2"><%= link_to "Cancel",user_path(@user.id), class: "form-control btn btn-outline-dark w-25" %></span>
+          <span class="mx-2"><%= f.submit "Save changes", class: "form-control btn btn-outline-dark w-50" %></span>
         </div>
         <div class="mx-5 my-5 pt-5 text-center">
           <%= link_to "アカウントを削除する",user_path(@user.id), method: :delete, data: {confirm: "本当にアカウントを削除しますか？" }, class: "btn btn-outline-danger" %>
