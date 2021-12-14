@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :ensure_correct_user, only: [:edit, :update, :destroy]
-  
+
   def new
     @post = Post.new
   end
@@ -58,7 +58,7 @@ class PostsController < ApplicationController
 
   def ensure_correct_user
     @post = Post.find(params[:id])
-    unless @post == current_user
+    unless @post.user == current_user
       redirect_to posts_path
     end
   end
